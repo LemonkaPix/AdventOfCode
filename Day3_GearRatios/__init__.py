@@ -24,10 +24,8 @@ for y in range(len(input)):
                 for vx in range(-1,2):
                     ny = y + vy
                     nx = x + vx
-                    if(ny >=0 and ny <= len(input) and nx >=0 and ny <= len(input[y])):
-                        # print(str(ny) + " " + str(nx))
-                        map[ny][nx] = True
-        #
+                    if (ny >= 0 and ny < len(input) and nx >= 0 and nx < len(input[y])):
+                        map[ny][nx] = True        #
 
 for y in range(len(input)):
     for x in range(len(input[y])):
@@ -37,18 +35,22 @@ for y in range(len(input)):
             if(map[y][x] == True): isPart = True;
         else:
             if(isPart == True):
-                print(currentNum)
                 answer += int(currentNum)
+                print(str(currentNum) + " " + str(answer))
             currentNum = ""
             isPart = False
 
+if(isPart == True):
+    answer += int(currentNum)
+    print(str(currentNum) + " " + str(answer))
+currentNum = ""
+isPart = False
 
 
-
-
-# for line in map:
-#     for i in line:
-#         print(int(i),end=" ")
-#     print()
+print()
+for line in map:
+    for i in line:
+        print(int(i),end=" ")
+    print()
 
 print("Answer: ", answer)

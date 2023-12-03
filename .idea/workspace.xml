@@ -4,7 +4,6 @@
     <list default="true" id="9d5ab723-f7f9-4c68-89d8-4331a007d734" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Day1_Trebuchet/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day1_Trebuchet/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day1_Trebuchet/testInput2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day1_Trebuchet/testInput2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,8 +98,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Day1_Trebuchet/__init__.py</url>
-          <line>90</line>
-          <option name="timeStamp" value="12" />
+          <line>83</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

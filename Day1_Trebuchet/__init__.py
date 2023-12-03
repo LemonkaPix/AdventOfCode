@@ -72,8 +72,8 @@ newInput = []
 for line in input:
     tmpString = ""
     matches = replace_words_with_numbers(line)
-    min = 10
-    minI = 10
+    min = 1000
+    minI = 1000
     max = 0
     maxI = 0
 
@@ -88,6 +88,8 @@ for line in input:
         if(index > max):
             max = index
             maxI = j
+
+    print()
     tmpString += str(matches[minI].re.pattern)
     tmpString += str(matches[maxI].re.pattern)
 

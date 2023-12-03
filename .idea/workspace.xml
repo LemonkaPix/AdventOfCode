@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d5ab723-f7f9-4c68-89d8-4331a007d734" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Day0_NotQuiteLisp/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day0_NotQuiteLisp/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Day3_GearRatios/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Day3_GearRatios/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,11 +31,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Day0_NotQuiteLisp/__init__.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Day3_GearRatios/__init__.py" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Foldery\PROGRAMOWANIE\AdventOfCode" />
       <recent name="D:\Foldery\PROGRAMOWANIE\AdventOfCode\Day0_NotQuiteLisp" />
       <recent name="D:\Foldery\PROGRAMOWANIE\AdventOfCode\Day2_CubeConundrum" />
     </key>
@@ -55,12 +56,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\Maciek\PycharmProjects\pythonProject\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Day0_NotQuiteLisp" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Day3_GearRatios" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Day0_NotQuiteLisp/__init__.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Day3_GearRatios/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -91,6 +92,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

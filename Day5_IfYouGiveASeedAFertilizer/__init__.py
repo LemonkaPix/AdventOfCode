@@ -6,8 +6,11 @@ answer = 0
 
 tmp = input[0].split(": ")[-1].split(' ')
 seeds = []
-for i in tmp:
-    seeds.append(int(i))
+for i in range(0, len(tmp), 2):
+    seeds.append([int(tmp[i]), int(tmp[i+1])])
+
+# for i in tmp:
+#     seeds.append(int(i))
 print("seeds: " + str(seeds))
 
 tables = []
@@ -38,10 +41,14 @@ def convert(num, table):
     else: return add
 
 output = []
-for seed in seeds:
-    for tableIndex in range(len(tables)):
-        seed = convert(seed, tableIndex)
-    output.append(seed)
+v = 1
+for seedPair in seeds:
+    for seed in range(seedPair[0],seedPair[0]+seedPair[1]):
+        for tableIndex in range(len(tables)):
+            seed = convert(seed, tableIndex)
+        output.append(seed)
+        print(v)
+        v += 1
 
 answer = min(output)
 print("Answer: ", answer)

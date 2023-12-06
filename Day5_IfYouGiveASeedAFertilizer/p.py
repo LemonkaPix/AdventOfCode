@@ -13,12 +13,7 @@ class Function:
     lines = S.split('\n')[1:] # throw away name
     # dst src sz
     self.tuples: list[tuple[int,int,int]] = [[int(x) for x in line.split()] for line in lines]
-    #print(self.tuples)
-  def apply_one(self, x: int) -> int:
-    for (dst, src, sz) in self.tuples:
-      if src<=x<src+sz:
-        return x+dst-src
-    return x
+    print(self.tuples)
 
   # list of [start, end) ranges
   def apply_range(self, R):
@@ -60,6 +55,7 @@ def f(R, o):
 # print(min(P1))
 
 P2 = []
+a = 0
 pairs = list(zip(seed[::2], seed[1::2]))
 for st, sz in pairs:
   # inclusive on the left, exclusive on the right
@@ -69,6 +65,9 @@ for st, sz in pairs:
   R = [(st, st+sz)]
   for f in Fs:
     R = f.apply_range(R)
+    a+=1
   #print(len(R))
+  if(min(R)[0] == 2254686): print(f"{st} {sz}")
   P2.append(min(R)[0])
 print(min(P2))
+print(a)

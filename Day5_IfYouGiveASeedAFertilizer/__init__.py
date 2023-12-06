@@ -14,17 +14,16 @@ for i in range(0, len(tmp), 2):
     seeds.append([int(tmp[i]), int(tmp[i+1])])
 
 max = 0
-min = 100000000000
-for i in tmp:
-    seeds.append(int(i))
+minimum = 100000000000
+# for i in tmp:
+#     seeds.append(int(i))
 
-for i in range(0, len(seeds), 2):
-    val = seeds[1]
+for val in seeds:
     if(val[0] + val[1] > max): max = val[0] + val[1]
-    if(val[0] < min): min = val[0]
+    if(val[0] < minimum): minimum = val[0]
 print(max)
-print(min)
-iterations = max - min
+print(minimum)
+iterations = max - minimum
 print(iterations)
 
 tables = []
@@ -58,23 +57,38 @@ output = []
 v = 0
 seedI = 0
 
-# for seedPair in seeds:
-#     answer += seedPair[1]
-for seedPair in seeds:
-    seedC = 0
-    seedI += 1
+converts = []
+for i in range(minimum, max):
+    locatoion = i
+    for tableIndex in range(len(tables)):
+        locatoion =  convert(locatoion, tableIndex)
+    converts.append(locatoion)
+    # print(f"converting {i - minimum} / {max - minimum}")
 
-    fstr = ""
+print("CONVERTED")
+
+answer = converts[92 - minimum]
+for seedPair in seeds:
     for seed in range(seedPair[0],seedPair[0]+seedPair[1]):
-        v += 1
-        seedC += 1
-        for tableIndex in range(len(tables)):
-            seed = convert(seed, tableIndex)
-        output.append(seed)
-        if(v % 100000 == 0): print(f"seed: {seedI}/{len(seeds)}, seed%: {seedC / seedPair[1] * 100}% \n{v}")
-        fstr += str(seed) + "\n"
-    fstr += "\n"
-    ot.write(str(min(output)) + "\n")
+        output.append(converts[seed - minimum])
+        print(seed)
+
+# for seedPair in seeds:
+#     seedC = 0
+#     seedI += 1
+#
+#     fstr = ""
+#     for seed in range(seedPair[0],seedPair[0]+seedPair[1]):
+#         v += 1
+#         seedC += 1
+#         for tableIndex in range(len(tables)):
+#             seed = convert(seed, tableIndex)
+#         output.append(seed)
+#         if(v % 100000 == 0): print(f"seed: {seedI}/{len(seeds)}, seed%: {seedC / seedPair[1] * 100}% \n{v}")
+#         fstr += str(seed) + "\n"
+#     fstr += "\n"
+#     ot.write(str(min(output)) + "\n")
+
 answer = min(output)
 
 print("Answer: ", answer)

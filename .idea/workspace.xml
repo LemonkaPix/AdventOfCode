@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d5ab723-f7f9-4c68-89d8-4331a007d734" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Day6_WaitForIt/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day6_WaitForIt/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day6_WaitForIt/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day5_IfYouGiveASeedAFertilizer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day5_IfYouGiveASeedAFertilizer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day6_WaitForIt/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day6_WaitForIt/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +115,11 @@
           <url>file://$PROJECT_DIR$/Day5_IfYouGiveASeedAFertilizer/__init__.py</url>
           <line>55</line>
           <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Day6_WaitForIt/__init__.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

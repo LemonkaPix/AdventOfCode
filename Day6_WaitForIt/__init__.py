@@ -2,25 +2,24 @@ print("--- Day 6: Wait For It ---")
 
 f = open("input.txt")
 input = f.read().split('\n')
-answer = 1
+answer = 0
 
-tmp = input[0].split()
+tmp = input[0].split(':')
 tmp.pop(0)
-times = [int(x) for x in tmp]
+time = int(tmp[0].replace(" ",""))
 
-tmp = input[1].split()
+tmp = input[1].split(':')
 tmp.pop(0)
-dists = [int(x) for x in tmp]
+dist = int(tmp[0].replace(" ",""))
 
-print(times)
-print(dists)
+print(time)
+print(dist)
 
-iteration = len(times)
+for t in range(int((time))):
+    if(t * (time-t) > dist): answer += 1
 
-for i in range(iteration):
-    possib = 0
-    for time in range(times[i]+1):
-        if(time * (times[i]-time) > dists[i]): possib += 1
-    answer = answer * possib
+# for i in range(iteration):
+#     for time in range(times[i]+1):
+#         if(time * (times[i]-time) > dists[i]): answer += 1
 
 print("Answer: ", answer)

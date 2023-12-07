@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d5ab723-f7f9-4c68-89d8-4331a007d734" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Day7_CamelCards/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Day7_CamelCards/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day7_CamelCards/__init__.py" afterDir="false" />
     </list>
@@ -120,11 +121,6 @@
           <url>file://$PROJECT_DIR$/Day5_IfYouGiveASeedAFertilizer/__init__.py</url>
           <line>89</line>
           <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Day7_CamelCards/__init__.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

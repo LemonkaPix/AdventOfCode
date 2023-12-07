@@ -9,19 +9,19 @@ answer = 0
 hands = []
 
 symbols = {
-    '2': 1,
-    '3': 2,
-    '4': 3,
-    '5': 4,
-    '6': 5,
-    '7': 6,
-    '8': 7,
-    '9': 8,
-    'T': 9,
-    'J': 10,
-    'Q': 11,
-    'K': 12,
-    'A': 13
+    'J': 1,
+    '2': 2,
+    '3': 3,
+    '4': 4,
+    '5': 5,
+    '6': 6,
+    '7': 7,
+    '8': 8,
+    '9': 9,
+    'T': 11,
+    'Q': 12,
+    'K': 13,
+    'A': 14
 }
 
 class sequence(Enum):
@@ -34,23 +34,9 @@ class sequence(Enum):
     h = 1
     none = 0
 
-class Hand:
-    def __init__(self, cards, bid):
-        self.cards = cards
-        self.bid = bid
-        self.rank = 0
-        self.seq = 0
-
-def IsGreaterThan(h1, h2):
-    if h1.seq == h2.seq:
-        for i in range(5):
-            if symbols[h1.cards[i]] > symbols[h2.cards[i]]: return True
-            elif symbols[h1.cards[i]] < symbols[h2.cards[i]]: return False
-    elif h1.seq > h2.seq: return True
-    else: return False
-
 def CalSeq(cards):
     symCount = {
+        'J': 0,
         '2': 0,
         '3': 0,
         '4': 0,
@@ -60,7 +46,6 @@ def CalSeq(cards):
         '8': 0,
         '9': 0,
         'T': 0,
-        'J': 0,
         'Q': 0,
         'K': 0,
         'A': 0
@@ -79,6 +64,72 @@ def CalSeq(cards):
             return sequence.p2
         else: return sequence.p1
     return sequence.h
+
+class Hand:
+    def __init__(self, cards, bid):
+        self.cards = cards
+        self.bid = bid
+        self.rank = 0
+
+        symCount = {
+            '2': 0,
+            '3': 0,
+            '4': 0,
+            '5': 0,
+            '6': 0,
+            '7': 0,
+            '8': 0,
+            '9': 0,
+            'T': 0,
+            'Q': 0,
+            'K': 0,
+            'A': 0
+        }
+
+        CountOfJ = cards.count('J')
+        if 'J' in cards:
+            if CountOfJ == 5 or CountOfJ == 4:
+                self.seq = sequence.p
+                return
+            for card in cards:
+                if card != 'J': symCount[card] += 1
+
+            maximumVal = max(symCount.values())
+            if CountOfJ == 3:
+                if maximumVal == 2:
+                    self.seq = sequence.p
+                elif maximumVal == 1:
+                    self.seq = sequence.k
+            elif CountOfJ == 2:
+                if maximumVal == 3:
+                    self.seq = sequence.p
+                elif maximumVal == 2:
+                    self.seq = sequence.k
+                elif maximumVal == 1:
+                    self.seq = sequence.t
+            elif CountOfJ == 1:
+                if maximumVal == 4:
+                    self.seq = sequence.p
+                elif maximumVal == 3:
+                    self.seq = sequence.k
+                elif maximumVal == 2:
+                    if sum(1 for v in symCount.values() if v == 2) == 2:
+                        self.seq = sequence.f
+                    else: self.seq = sequence.t
+                elif maximumVal == 1:
+                    self.seq = sequence.p1
+        else:
+            self.seq = CalSeq(cards)
+
+
+def IsGreaterThan(h1, h2):
+    if h1.seq == h2.seq:
+        for i in range(5):
+            if symbols[h1.cards[i]] > symbols[h2.cards[i]]: return True
+            elif symbols[h1.cards[i]] < symbols[h2.cards[i]]: return False
+    elif h1.seq > h2.seq: return True
+    else: return False
+
 
 
 def bubbleSort(arr):
@@ -112,9 +163,9 @@ for i in input:
     #print(i)
 
 # print("Set Seq")
-for i in range(len(hands)):
-    hand = hands[i]
-    hand.seq = CalSeq(hand.cards)
+# for i in range(len(hands)):
+#     hand = hands[i]
+#     hand.seq = CalSeq(hand.cards)
 #     print(hand.cards, hand.bid, hand.seq, hand.rank)
 # print()
 # print(sequence.p1.value)

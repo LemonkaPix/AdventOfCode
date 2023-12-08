@@ -8,7 +8,7 @@ input.pop(0)
 input.pop(0)
 
 dic = dict()
-
+codes = []
 for line in input:
     data = line.split(" = ")
     key = data[0]
@@ -18,20 +18,30 @@ for line in input:
     tmp = val.split(", ")
     value = (tmp[0],tmp[1])
 
+    if(key[-1] == 'A'): codes.append(key)
+
     dic[key] = value
 
 isEnd = False
-code = "AAA"
+
 while not isEnd:
 
     for chr in seq:
-        if(chr == 'L'):
-            code = dic[code][0]
-        else:
-            code = dic[code][1]
+        for i in range(len(codes)):
+            code = codes[i]
+            if(chr == 'L'):
+                codes[i] = dic[code][0]
+            else:
+                codes[i] = dic[code][1]
+        print(codes)
+
         answer += 1
-        if code == "ZZZ":
-            isEnd = True
-            break
+
+        isEnd = True
+        for i in codes:
+            if i[-1] != 'Z':
+                isEnd = False
+                break
+        if isEnd: break
 
 print("Answer: ", answer)

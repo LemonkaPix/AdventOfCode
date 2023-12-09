@@ -22,12 +22,14 @@ for line in input:
         data = tmp
         exp.append(data)
 
-    exp[-1].append(0)
+    ShowExp(exp)
+
+    exp[-1].insert(0, 0)
     for i in range(len(exp)-2, -1, -1):
-        exp[i].append(exp[i][-1] + exp[i+1][-1])
+        exp[i].insert(0, exp[i][0] - exp[i+1][0])
 
     ShowExp(exp)
-    answer += exp[0][-1]
+    answer += exp[0][0]
 
 
 print("Answer: ", answer)

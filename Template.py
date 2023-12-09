@@ -1,6 +1,6 @@
 print("============")
 
-f = open("")
+f = open("input.txt")
 input = f.read().split('\n')
 answer = 0
 
